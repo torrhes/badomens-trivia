@@ -1,5 +1,5 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { useMemo, useRef, useState } from "react";
 import { PageShell } from "../components/SiteChrome";
 import { quizSession, useQuizSession } from "../features/quiz/useQuizSession";
 import { rankFromPercent } from "../features/result/rankFromScore";
@@ -39,22 +39,12 @@ function ResultPage() {
     return { total, correct, pct: Math.round(pct), rank };
   }, [session]);
 
-  useEffect(() => {
-    if (!session || session.status !== "finished") {
-      // Redirect if landed here without a finished session
-      const t = setTimeout(() => navigate({ to: "/" }), 200);
-      return () => clearTimeout(t);
-    }
-  }, [session, navigate]);
+  if (!session || session.status !== "finished") {
+    throw notFound();
+  }
 
-  if (!session || !stats) {
-    return (
-      <PageShell>
-        <div className="max-w-3xl mx-auto px-6 py-24 font-mono text-xs text-zinc-500">
-          NO ACTIVE SESSION. RETURNING HOME…
-        </div>
-      </PageShell>
-    );
+  if (!stats) {
+    throw notFound();
   }
 
   const playAgain = () => {
