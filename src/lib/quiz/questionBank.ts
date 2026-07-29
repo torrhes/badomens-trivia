@@ -10,11 +10,56 @@ const CATEGORY_BANKS: Record<QuestionCategory, Question[]> = {
   band: BAND_FACT_QUESTIONS,
 };
 
-const DIFFICULTY_TIERS: Record<Difficulty, QuestionDifficulty[]> = {
-  casual: ["easy", "easy", "medium"],
-  fan: ["easy", "medium", "medium", "hard"],
-  cult: ["medium", "hard", "hard", "expert"],
-  basement: ["hard", "expert", "expert"],
+/** Each entry is one weighted draw when building a session (mostly easy → full spectrum). */
+const DIFFICULTY_WEIGHTS: Record<Difficulty, QuestionDifficulty[]> = {
+  casual: [
+    "easy",
+    "easy",
+    "easy",
+    "easy",
+    "easy",
+    "easy",
+    "easy",
+    "medium",
+    "medium",
+    "medium",
+  ],
+  fan: [
+    "easy",
+    "easy",
+    "easy",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "hard",
+    "hard",
+    "hard",
+  ],
+  cult: [
+    "easy",
+    "easy",
+    "medium",
+    "medium",
+    "medium",
+    "hard",
+    "hard",
+    "hard",
+    "hard",
+    "hard",
+  ],
+  basement: [
+    "easy",
+    "medium",
+    "medium",
+    "hard",
+    "hard",
+    "hard",
+    "expert",
+    "expert",
+    "expert",
+    "expert",
+  ],
 };
 
 const MODE_CATEGORIES: Record<GameMode, QuestionCategory[]> = {
@@ -47,36 +92,57 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-function getPoolForMode(mode: GameMode, difficulty: Difficulty): Question[] {
-  const cats = MODE_CATEGORIES[mode];
-  const tiers = DIFFICULTY_TIERS[difficulty];
-
+function questionsForMode(
+  cats: QuestionCategory[],
+  diff: QuestionDifficulty,
+): Question[] {
   return cats.flatMap((cat) =>
-    (CATEGORY_BANKS[cat] ?? []).filter((q) => tiers.includes(q.difficulty)),
+    (CATEGORY_BANKS[cat] ?? []).filter((q) => q.difficulty === diff),
   );
+}
+
+function pickUnused(candidates: Question[], usedIds: Set<string>): Question | undefined {
+  const available = candidates.filter((q) => !usedIds.has(q.id));
+  if (available.length === 0) return undefined;
+  return available[Math.floor(Math.random() * available.length)];
 }
 
 export function pickQuestions(mode: GameMode, difficulty: Difficulty): Question[] {
   const count = QUESTION_COUNT[difficulty];
-  const pool = getPoolForMode(mode, difficulty);
+  const cats = MODE_CATEGORIES[mode];
+  const weights = DIFFICULTY_WEIGHTS[difficulty];
+  const allowedDiffs = [...new Set(weights)];
 
-  if (pool.length === 0) {
+  const modePool = cats.flatMap((cat) => CATEGORY_BANKS[cat] ?? []);
+  if (modePool.length === 0) {
     return shuffle(MOCK_QUESTIONS).slice(0, count);
   }
 
-  const shuffled = shuffle(pool);
   const selected: Question[] = [];
-  let index = 0;
+  const usedIds = new Set<string>();
 
-  while (selected.length < count && shuffled.length > 0) {
-    const question = shuffled[index % shuffled.length];
+  for (let i = 0; i < count; i++) {
+    const targetDiff = weights[Math.floor(Math.random() * weights.length)];
+    let question =
+      pickUnused(questionsForMode(cats, targetDiff), usedIds) ??
+      pickUnused(
+        shuffle(allowedDiffs)
+          .flatMap((d) => questionsForMode(cats, d))
+          .filter((q, idx, arr) => arr.findIndex((x) => x.id === q.id) === idx),
+        usedIds,
+      ) ??
+      pickUnused(modePool, usedIds);
+
+    if (!question) {
+      question = modePool[Math.floor(Math.random() * modePool.length)];
+    }
+
+    usedIds.add(question.id);
     selected.push({
       ...question,
       options: shuffle(question.options),
     });
-    index += 1;
-    if (selected.length >= count) break;
   }
 
-  return selected.slice(0, count);
+  return selected;
 }

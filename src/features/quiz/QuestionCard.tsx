@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Question, QuestionDifficulty } from "../../lib/quiz/types";
 
 const DIFF_LABEL: Record<QuestionDifficulty, string> = {
@@ -8,6 +8,25 @@ const DIFF_LABEL: Record<QuestionDifficulty, string> = {
   hard: "HARD",
   expert: "EXPERT",
 };
+
+const MAX_AUDIO_PLAYS = 2;
+const CLIP_SECONDS = 3;
+
+function PlayIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
+    </svg>
+  );
+}
 
 export function QuestionCard({
   question,
@@ -21,12 +40,22 @@ export function QuestionCard({
   revealed: boolean;
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const playCountRef = useRef(0);
+  const countedCurrentPlayRef = useRef(false);
+  const playingRef = useRef(false);
   const [playCount, setPlayCount] = useState(0);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
+    playCountRef.current = playCount;
+  }, [playCount]);
+
+  useEffect(() => {
     setPlayCount(0);
+    playCountRef.current = 0;
     setPlaying(false);
+    countedCurrentPlayRef.current = false;
+    playingRef.current = false;
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -34,11 +63,24 @@ export function QuestionCard({
     }
   }, [question.id]);
 
-  const handlePlay = async () => {
+  const finishPlay = useCallback(() => {
+    if (countedCurrentPlayRef.current) return;
+    countedCurrentPlayRef.current = true;
+    playingRef.current = false;
+    setPlaying(false);
+    setPlayCount((count) => {
+      const next = Math.min(MAX_AUDIO_PLAYS, count + 1);
+      playCountRef.current = next;
+      return next;
+    });
+  }, []);
+
+  const handlePlay = useCallback(async () => {
     if (!question.mediaUrl || question.mediaType !== "audio") return;
-    if (playCount >= 2) return;
+    if (playCountRef.current >= MAX_AUDIO_PLAYS) return;
     const audio = audioRef.current;
     if (!audio) return;
+    if (playingRef.current) return;
 
     if (audio.src !== question.mediaUrl) {
       audio.src = question.mediaUrl;
@@ -46,40 +88,42 @@ export function QuestionCard({
     }
 
     audio.currentTime = 0;
+    countedCurrentPlayRef.current = false;
 
     try {
       await audio.play();
+      playingRef.current = true;
       setPlaying(true);
     } catch (error) {
       console.error("Audio playback failed", error);
+      playingRef.current = false;
       setPlaying(false);
     }
-  };
+  }, [question.mediaUrl, question.mediaType]);
 
   useEffect(() => {
     const onPlayEvent = (e: Event) => {
       const ce = e as CustomEvent;
       if (ce?.detail?.questionId === question.id) {
-        handlePlay();
+        void handlePlay();
       }
     };
     window.addEventListener("play-question-audio", onPlayEvent as EventListener);
     return () => window.removeEventListener("play-question-audio", onPlayEvent as EventListener);
-  }, [question.id, playCount]);
+  }, [question.id, handlePlay]);
 
   const handleTimeUpdate = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (audio.currentTime >= 3) {
+    if (audio.currentTime >= CLIP_SECONDS) {
       audio.pause();
-      setPlaying(false);
-      setPlayCount((count) => Math.min(2, count + 1));
+      audio.currentTime = CLIP_SECONDS;
+      finishPlay();
     }
   };
 
   const handleAudioEnd = () => {
-    setPlaying(false);
-    setPlayCount((count) => Math.min(2, count + 1));
+    finishPlay();
   };
 
   const showImage = question.mediaType === "image" && question.mediaUrl;
@@ -127,18 +171,50 @@ export function QuestionCard({
           </div>
           <button
             type="button"
-            onClick={handlePlay}
-            disabled={playCount >= 2 || playing}
-            className="inline-flex items-center justify-center rounded-full bg-brand-accent px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-brand-text transition hover:bg-brand-elev disabled:cursor-not-allowed disabled:opacity-50"
+            onClick={() => void handlePlay()}
+            disabled={playCount >= MAX_AUDIO_PLAYS || playing}
+            aria-label={
+              playCount >= MAX_AUDIO_PLAYS
+                ? "No replays left"
+                : playing
+                  ? "Playing clip"
+                  : `Play clip, ${MAX_AUDIO_PLAYS - playCount} plays remaining`
+            }
+            className="group flex w-full items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/80 p-4 text-left transition hover:border-zinc-700 hover:bg-zinc-900 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {playCount >= 2
-              ? "NO REPLAYS LEFT"
-              : playing
-                ? "PLAYING…"
-                : `PLAY CLIP (${2 - playCount} LEFT)`}
+            <span
+              className={
+                "flex h-14 w-14 shrink-0 items-center justify-center rounded-full transition " +
+                (playing
+                  ? "bg-brand-accent/20 text-brand-accent"
+                  : "bg-brand-accent text-brand-text group-hover:bg-brand-elev group-disabled:bg-zinc-800 group-disabled:text-zinc-500")
+              }
+            >
+              {playing ? (
+                <span className="font-mono text-[10px] tracking-widest uppercase">···</span>
+              ) : (
+                <PlayIcon />
+              )}
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-xs font-semibold uppercase tracking-[0.25em] text-zinc-200">
+                {playCount >= MAX_AUDIO_PLAYS
+                  ? "NO REPLAYS LEFT"
+                  : playing
+                    ? "PLAYING…"
+                    : "PLAY CLIP"}
+              </span>
+              <span className="mt-1 block font-mono text-[10px] tracking-widest uppercase text-zinc-500">
+                {playCount >= MAX_AUDIO_PLAYS
+                  ? `${MAX_AUDIO_PLAYS}/${MAX_AUDIO_PLAYS} PLAYS USED`
+                  : `${MAX_AUDIO_PLAYS - playCount} OF ${MAX_AUDIO_PLAYS} PLAYS LEFT · ${CLIP_SECONDS}S EACH`}
+              </span>
+            </span>
           </button>
           <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
-            This clip is limited to 3 seconds per play. You can listen up to 2 times.
+            This clip is limited to {CLIP_SECONDS} seconds per play. You can listen up to{" "}
+            {MAX_AUDIO_PLAYS} times. Source: YouTube · Bad Omens · Sumerian Records. All rights
+            belong to the respective copyright holders.
           </p>
           <audio
             ref={audioRef}

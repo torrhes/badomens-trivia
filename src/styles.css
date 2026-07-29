@@ -115,17 +115,20 @@
   filter: grayscale(1) contrast(1.2) brightness(0.72);
   opacity: 0.9;
   pointer-events: none;
-  max-height: 80vh;
+  max-height: 90vh;
   min-height: 40vh;
 }
-@media screen and (min-width: 1025px) {
-  /* telas grandes */
+@media screen and (min-width: 1200px) {
   .hero-backdrop {
-    max-height: 80vh;
+    max-height: 90vh;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .hero-backdrop {
+    max-height: 70vh;
   }
 }
 @media screen and (max-width: 650px) {
-  /* telas grandes */
   .hero-backdrop {
     max-height: 65vh;
   }
