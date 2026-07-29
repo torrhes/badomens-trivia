@@ -1,75 +1,115 @@
-# React + TypeScript + Vite
+# BAD OMENS // QUIZ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An **unofficial**, **fan-made** quiz for **Bad Omens** fans. Test how well you know the discography, music videos, and band history—from casual listening to cult-leader obsession.
 
-Currently, two official plugins are available:
+> **Disclaimer:** This project is not affiliated with the band, Sumerian Records, or any official entity. All audio and visual material belongs to the respective copyright holders.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Game modes**
+  - **Mixed Quiz** — random blend of songs, videos, and band trivia
+  - **Guess the Song** — identify tracks from short audio clips
+  - **Music Videos** — visual recognition of official videos
+  - **Band Facts** — lore, releases, interviews, and history
+- **Four session difficulty tiers** (separate from per-question easy/medium/hard/expert labels)
+  - **Casual** — 10 questions, generous timer; mostly easy with some medium
+  - **Fan** — 15 questions; easy, medium, and some hard
+  - **Cult Member** — 20 questions; easy, medium, and hard
+  - **Cult Leader** — 20 questions, tight timer; includes **expert** questions
+- **Scoring** — base points per correct answer, speed bonus, difficulty bonus, and streak multiplier
+- **Audio clips** — up to **2 plays** of **3 seconds** each per question, with source credit (YouTube · Bad Omens · Sumerian Records)
+- **Results** — rank, shareable image, and answer review
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite 8](https://vite.dev/)
+- [TanStack Router](https://tanstack.com/router) (routes in `src/routes/`)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Motion](https://motion.dev/) (animations)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Node.js** 20+ (recommended)
+- **npm** (or adapt commands for pnpm/yarn)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# install dependencies
+npm install
 
+# development (HMR)
+npm run dev
+
+# production build
+npm run build
+
+# preview production build
+npm run preview
+
+# lint
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the URL Vite prints in the terminal (usually `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## App flow
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Home → pick a mode (`/play/:mode`)
+2. Choose difficulty tier → start session (`/quiz/:mode/:diff`)
+3. Timed questions → feedback → **Result** (`/result`)
+
+Session state lives in client memory (`useQuizSession`). Reloading mid-quiz restarts the session if you land directly on the quiz URL.
+
+## Project structure (overview)
 
 ```
+src/
+├── routes/              # pages (TanStack Router file-based)
+├── features/
+│   ├── quiz/            # session UI (questions, timer, feedback)
+│   └── modes/           # mode and difficulty presets
+├── lib/
+│   ├── quiz/            # question banks, types, selection logic
+│   └── scoring/         # score calculation
+├── components/          # shared layout (SiteChrome)
+└── assets/              # audio, images, visual assets
+```
+
+### Where to edit questions
+
+| File | Content |
+|------|---------|
+| `src/lib/quiz/songQuestions.ts` | Audio / song questions |
+| `src/lib/quiz/videoQuestions.ts` | Music video questions |
+| `src/lib/quiz/bandQuestions.ts` | Band facts and lore |
+| `src/lib/quiz/audioLibrary.ts` | MP3 map under `src/assets/audios/` |
+| `src/lib/quiz/mediaLibrary.ts` | Video stills / images |
+| `src/lib/quiz/questionBank.ts` | Mode pools + difficulty weights per tier |
+
+Each question uses the `Question` type in `src/lib/quiz/types.ts` (`id`, `category`, `difficulty`, `options`, `correctAnswer`, optional media, etc.).
+
+### Session tier vs. question difficulty
+
+- **Tier** (`casual`, `fan`, `cult`, `basement`): question count, time limit, and **weighted** draw of question difficulties per round (see `DIFFICULTY_WEIGHTS` in `questionBank.ts`).
+- **Question difficulty** (`easy`, `medium`, `hard`, `expert`): affects scoring and UI labels.
+
+## npm scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Vite dev server |
+| `npm run build` | `tsc -b` + static build |
+| `npm run preview` | Serve `dist/` |
+| `npm run lint` | ESLint |
+
+## License and media
+
+Repository code: use according to the project license (add a `LICENSE` file if you publish formally; otherwise treat as personal/educational fan use).
+
+**Music, images, and trademarks** related to Bad Omens and Sumerian Records are **not** owned by this repo. Clips are limited in-app by duration and plays per question; keep credits when adding new assets.
+
+---
+
+*How deep are you in the concrete jungle?*

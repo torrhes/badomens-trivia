@@ -1,24 +1,26 @@
-import { createFileRoute, Link, useNavigate } from '@tanstack/react-router';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { PageShell } from '../components/SiteChrome';
-import { quizSession, useQuizSession } from '../features/quiz/useQuizSession';
-import { rankFromPercent } from '../features/result/rankFromScore';
-import { exportShareImage } from '../lib/share/exportShareImage';
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { PageShell } from "../components/SiteChrome";
+import { quizSession, useQuizSession } from "../features/quiz/useQuizSession";
+import { rankFromPercent } from "../features/result/rankFromScore";
+import { exportShareImage } from "../lib/share/exportShareImage";
 
-export const Route = createFileRoute('/result')({
+const PLAY_URL = "https://badomens-quizz.vercel.app/";
+
+export const Route = createFileRoute("/result")({
   head: () => ({
     meta: [
-      { title: 'RESULT — BAD OMENS // QUIZ' },
-      { name: 'description', content: 'Your rank in the concrete jungle.' },
-      { property: 'og:title', content: 'BAD OMENS // QUIZ — Result' },
+      { title: "RESULT — BAD OMENS // QUIZ" },
+      { name: "description", content: "Your rank in the concrete jungle." },
+      { property: "og:title", content: "BAD OMENS // QUIZ — Result" },
       {
-        property: 'og:description',
-        content: 'Your rank in the concrete jungle.'
+        property: "og:description",
+        content: "Your rank in the concrete jungle.",
       },
-      { name: 'robots', content: 'noindex' }
-    ]
+      { name: "robots", content: "noindex" },
+    ],
   }),
-  component: ResultPage
+  component: ResultPage,
 });
 
 function ResultPage() {
@@ -38,9 +40,9 @@ function ResultPage() {
   }, [session]);
 
   useEffect(() => {
-    if (!session || session.status !== 'finished') {
+    if (!session || session.status !== "finished") {
       // Redirect if landed here without a finished session
-      const t = setTimeout(() => navigate({ to: '/' }), 200);
+      const t = setTimeout(() => navigate({ to: "/" }), 200);
       return () => clearTimeout(t);
     }
   }, [session, navigate]);
@@ -58,7 +60,7 @@ function ResultPage() {
   const playAgain = () => {
     const { mode } = session;
     quizSession.reset();
-    navigate({ to: '/play/$mode', params: { mode } });
+    navigate({ to: "/play/$mode", params: { mode } });
   };
 
   const handleShare = async () => {
@@ -98,13 +100,13 @@ function ResultPage() {
               {stats.rank.label}
             </div>
             <div className="font-mono text-sm text-zinc-400">
-              TOP{' '}
-              <span className="text-brand-text text-xl font-bold">
-                {stats.rank.topPercent}%
-              </span>
+              TOP{" "}
+              <span className="text-brand-text text-xl font-bold">{stats.rank.topPercent}%</span>
             </div>
           </div>
         </div>
+
+        <ChallengeCta className="mt-12" />
 
         <div className="mt-12 flex flex-wrap gap-3">
           <button
@@ -119,12 +121,7 @@ function ResultPage() {
           >
             Share Result
           </button>
-          <span
-            title="Available in Phase 3"
-            className="border border-zinc-900 px-6 py-3 font-mono text-xs tracking-widest uppercase text-zinc-700 cursor-not-allowed"
-          >
-            Leaderboard
-          </span>
+
           <Link
             to="/"
             className="border border-zinc-900 hover:border-zinc-700 px-6 py-3 font-mono text-xs tracking-widest uppercase text-zinc-400"
@@ -144,11 +141,11 @@ function ResultPage() {
                 disabled={exporting}
                 className="bg-brand-accent text-brand-text px-4 py-2 font-mono text-[10px] tracking-widest uppercase rounded-[2px] disabled:opacity-50"
               >
-                {exporting ? 'Exporting…' : '↓ Download PNG'}
+                {exporting ? "Exporting…" : "↓ Download PNG"}
               </button>
             </div>
             <div className="overflow-auto">
-              <div style={{ transformOrigin: 'top left' }} className="w-fit">
+              <div style={{ transformOrigin: "top left" }} className="w-fit">
                 <ShareCard
                   ref={shareRef}
                   headline={stats.rank.headline}
@@ -170,12 +167,40 @@ function ResultPage() {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="bg-brand-bg p-6">
-      <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">
-        {label}
+      <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">{label}</div>
+      <div className="mt-3 font-display text-3xl md:text-4xl tabular-nums">{value}</div>
+    </div>
+  );
+}
+
+function ChallengeCta({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={
+        "border border-zinc-900 bg-brand-surface p-8 md:p-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 " +
+        className
+      }
+    >
+      <div>
+        <div className="font-display text-2xl md:text-3xl uppercase tracking-tight">
+          CAN YOU BEAT ME?
+        </div>
+        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-500">
+          PLAY AT /BAD-OMENS-QUIZ
+        </p>
+        <a
+          href={PLAY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block font-mono text-xs uppercase tracking-widest text-brand-accent hover:text-brand-text transition-colors"
+        >
+          {PLAY_URL}
+        </a>
+        <p className="mt-4 font-mono text-[10px] text-zinc-600 uppercase tracking-widest">
+          Unofficial fan project · Not affiliated with the band
+        </p>
       </div>
-      <div className="mt-3 font-display text-3xl md:text-4xl tabular-nums">
-        {value}
-      </div>
+      <div className="size-2 shrink-0 bg-brand-accent self-end sm:self-auto" aria-hidden />
     </div>
   );
 }
@@ -196,7 +221,7 @@ const ShareCard = ({
   correct,
   total,
   score,
-  topPercent
+  topPercent,
 }: ShareCardProps & { ref: React.Ref<HTMLDivElement> }) => (
   <div
     ref={ref}
@@ -207,9 +232,7 @@ const ShareCard = ({
     <div className="relative z-10 h-full flex flex-col p-10">
       <div className="flex items-center gap-3">
         <div className="size-7 bg-brand-accent grid place-items-center">
-          <span className="font-display font-bold text-base leading-none">
-            B
-          </span>
+          <span className="font-display font-bold text-base leading-none">BOQ</span>
         </div>
         <span className="font-display text-lg uppercase tracking-tight">
           BAD OMENS <span className="text-brand-accent">//</span> QUIZ
@@ -232,20 +255,12 @@ const ShareCard = ({
 
       <div className="mt-10 border-t border-zinc-900 pt-6 flex justify-between">
         <div>
-          <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">
-            SCORE
-          </div>
-          <div className="font-display text-3xl tabular-nums">
-            {score.toLocaleString()}
-          </div>
+          <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">SCORE</div>
+          <div className="font-display text-3xl tabular-nums">{score.toLocaleString()}</div>
         </div>
         <div className="text-right">
-          <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">
-            RANK
-          </div>
-          <div className="font-display text-3xl text-brand-accent uppercase">
-            {rankLabel}
-          </div>
+          <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">RANK</div>
+          <div className="font-display text-3xl text-brand-accent uppercase">{rankLabel}</div>
         </div>
       </div>
 
@@ -260,11 +275,12 @@ const ShareCard = ({
 
       <div className="border-t border-zinc-900 pt-6 flex items-end justify-between">
         <div>
-          <div className="font-display text-2xl uppercase tracking-tight">
-            CAN YOU BEAT ME?
-          </div>
+          <div className="font-display text-2xl uppercase tracking-tight">CAN YOU BEAT ME?</div>
           <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-zinc-500">
             PLAY AT /BAD-OMENS-QUIZ
+          </div>
+          <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-brand-accent break-all">
+            {PLAY_URL}
           </div>
         </div>
         <div className="size-2 bg-brand-accent" />
