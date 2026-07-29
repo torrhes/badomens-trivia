@@ -84,7 +84,7 @@ export function PageShell({
 }) {
   return (
     <div className="min-h-screen bg-brand-bg text-brand-text font-sans relative overflow-x-hidden">
-      <div className="fixed inset-0 grain-overlay z-50" aria-hidden />
+      <div className="fixed inset-0 z-50" aria-hidden />
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden />
       <SiteNav />
       <main className="relative z-10">

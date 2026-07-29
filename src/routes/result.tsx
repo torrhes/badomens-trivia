@@ -218,7 +218,7 @@ const ShareCard = ({
     style={{ width: 540, height: 960 }}
     className="bg-brand-bg text-brand-text relative overflow-hidden"
   >
-    <div className="absolute inset-0 grain-overlay" aria-hidden />
+    <div className="absolute inset-0 " aria-hidden />
     <div className="relative z-10 h-full flex flex-col p-10">
       <div className="flex items-center gap-3">
         <div className="size-7 bg-brand-accent grid place-items-center">
