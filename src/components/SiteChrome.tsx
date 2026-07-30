@@ -63,7 +63,7 @@ export function SiteFooter() {
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-zinc-950/5 flex justify-between items-center">
         <span className="font-mono text-[9px] text-zinc-800 uppercase">
-          © {new Date().getFullYear()} NAYARA FERREIRA - NTORRHES@GMAIL.COM
+          © {new Date().getFullYear()} NAYARA FERREIRA - CONCRETE FOREVER
         </span>
         <div className="flex gap-4">
           <div className="size-1 bg-brand-accent" />
