@@ -18,7 +18,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     category: "band",
     difficulty: "easy",
     question:
-      "Which current member joined Bad Omens after sending an online cover of the band's early demos?",
+      "Which current member joined Bad Omens after sending an online drum cover of the band's early demos?",
     options: ["Nick Folio", "Nick Ruffilo", "Joakim Karlsson", "Vincent Riquier"],
     correctAnswer: "Nick Folio",
     explanation:
@@ -82,7 +82,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
       "'Anything > Human' is a direct collaboration with ERRA, released as part of the Concrete Jungle project.",
     funFact:
       "The fusion of Noah's vocals with ERRA's technical instrumentation created one of the most complex tracks on the record.",
-    source: "Provided discography",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
     id: "band-e-7",
@@ -96,7 +96,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
       "Bad Omens and Poppy joined forces on 'V.A.N', released as a single and later part of the Concrete Jungle OST.",
     funFact:
       "The track features a dark, industrial aesthetic that perfectly matched both artists' styles.",
-    source: "Provided discography / NME",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
     id: "band-e-8",
@@ -137,7 +137,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     explanation: "They signed with Sumerian Records in 2015, which released their debut in 2016.",
     funFact:
       "Sumerian also released their first two albums before they moved on to other projects.",
-    source: "KRRO",
+    source: "Wikipedia - Bad Omens (album)",
   },
   {
     id: "band-m-3",
@@ -163,7 +163,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     explanation:
       "'The Drain' features HEALTH, known for their industrial textures, alongside SWARM.",
     funFact: "This track is one of the most experimental cuts on the Concrete Jungle project.",
-    source: "Provided discography",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
     id: "band-m-5",
@@ -200,7 +200,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
   {
     id: "band-m-7",
     category: "band",
-    difficulty: "medium",
+    difficulty: "expert",
     question:
       "Who was the producer responsible for recording the debut album at Graphic Nature Audio?",
     options: ["Joey Sturgis", "Will Putney", "Adam Dutkiewicz", "Zakk Cervini"],
@@ -209,7 +209,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
       "Will Putney (known for Body Count and The Amity Affliction) produced the debut in Belleville, NJ.",
     funFact:
       "Choosing Putney gave the album a sonic weight that defined the band's early identity.",
-    source: "KRRO",
+    source: "Wikipedia - Bad Omens (album)",
   },
   {
     id: "band-m-8",
@@ -225,33 +225,42 @@ export const BAND_FACT_QUESTIONS: Question[] = [
   },
 
   // ==================== HARD (8) ====================
+
   {
     id: "band-h-1",
     category: "band",
     difficulty: "hard",
-    question: "Which track from 'Concrete Jungle [The OST]' features a remix titled '(Vocalat)'?",
-    options: ["VANish", "Careful What You Wish For", "The Drain", "Teeth"],
-    correctAnswer: "Careful What You Wish For",
+    question:
+      "Which track from 'Concrete Jungle [The OST]' is a recharged version of a song from the debut album, 'Bad Omens'?",
+    options: ["Hedonist [Recharged]", "V.A.N", "The Drain", "Anything > Human"],
+    correctAnswer: "Hedonist [Recharged]",
     explanation:
-      "The '(Vocalat)' version of 'Careful What You Wish For' isolates and processes the vocals in a unique way.",
+      "The debut album features the track 'Hedonist'. The OST reworks it as 'Hedonist [Recharged]' featuring Wargasm.",
     funFact:
-      "The suffix 'Vocalat' is a playful mashup of 'Vocals' and 'At' (as in a file extension).",
-    source: "Provided discography",
+      "This is the only track on the OST that directly reworks a song from the band's first album.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
+
   {
     id: "band-h-2",
     category: "band",
     difficulty: "hard",
     question:
-      "Which Concrete Jungle OST track features a title stylized with backslashes, simulating a computer directory path?",
-    options: ["C:\n\e off", "V.A.N", "Obsidian", "Inferno"],
-    correctAnswer: "C:\n\e off",
+      "Which track on 'Concrete Jungle [The OST]' features a title formatted exactly like a Windows file directory path, with backslashes and a file extension?",
+    options: [
+      "C:\\Projects\\CJOST\\BEATDEATH",
+      "C:\\n\\e off",
+      "Digital Footprint",
+      "Loading Screen",
+    ],
+    correctAnswer: "C:\\Projects\\CJOST\\BEATDEATH",
     explanation:
-      "The track 'C:\n\e off' is one of the most experimental on the project, with a title that references system commands.",
+      "The opening track is stylized as a computer file path, fitting the album's cyberpunk theme.",
     funFact:
-      "The title is a nod to the cyberpunk and industrial aesthetic that permeates part of the album.",
-    source: "Provided discography",
+      "The track is named after the project folder for the album itself, blending the band's reality with the album's digital aesthetic.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
+
   {
     id: "band-h-3",
     category: "band",
@@ -265,19 +274,22 @@ export const BAND_FACT_QUESTIONS: Question[] = [
       "This collaboration showcased Noah's versatility in delivering heavy deathcore vocals.",
     source: "KRRO",
   },
+
   {
     id: "band-h-4",
     category: "band",
     difficulty: "hard",
     question:
-      "The track 'The Death of Peace of Mind' received a remix version with which subtitle within the Concrete Jungle OST project?",
-    options: ["(We Are Nowhere)", "(The Sound of the End)", "(Vocalat)", "(Orchestral)"],
-    correctAnswer: "(We Are Nowhere)",
+      "Which track on 'The Death of Peace of Mind' features a title stylized as an acronym?",
+    options: ["IDWT$", "What It Cost", "Nowhere to Go", "Somebody Else"],
+    correctAnswer: "IDWT$",
     explanation:
-      "The track was reinvented as 'The Death of Peace of Mind (We Are Nowhere)' on the OST.",
-    funFact: "This version gives a more ethereal, atmospheric tone to the original song.",
-    source: "Provided discography",
+      "The track 'IDWT$' is stylized with a dollar sign, and its meaning is generally interpreted as 'I Don't Want The Money'.",
+    funFact:
+      "The unconventional title adds to the album's themes of frustration and emotional exhaustion.",
+    source: "Wikipedia - The Death of Peace of Mind",
   },
+
   {
     id: "band-h-5",
     category: "band",
@@ -309,36 +321,38 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     category: "band",
     difficulty: "hard",
     question:
-      "Which track on 'FGBGFM Unplugged' is exclusive to that release, never appearing on the original studio album (standard or deluxe)?",
-    options: ["Bad Decisions", "Dying to Love", "Concrete Jungle", "The Hell I Overcame"],
-    correctAnswer: "Dying to Love",
-    explanation: "'Dying to Love' was released exclusively on the acoustic 'FGBGFM Unplugged' EP.",
+      "Which song on the Deluxe edition of 'Finding God Before God Finds Me' is a cover of a classic 1990s pop hit?",
+    options: ["Never Know", "Limits", "Come Undone", "Suffocate"],
+    correctAnswer: "Come Undone",
+    explanation:
+      "The 2020 Deluxe edition added three bonus tracks: 'Never Know', 'Limits', and a cover of Duran Duran's 1993 hit 'Come Undone'.",
     funFact:
-      "This makes it one of the rarest tracks in the band's discography, never having an electric studio version.",
-    source: "Provided discography",
+      "This cover marked Bad Omens' first official foray into reimagining mainstream pop/rock classics.",
+    source: "Wikipedia - Finding God Before God Finds Me",
   },
+
   {
     id: "band-h-8",
     category: "band",
     difficulty: "hard",
     question:
-      "Among these Concrete Jungle OST tracks, which is the only one that does NOT have an official '(Orchestral)' version?",
-    options: ["VANish", "The Drain", "Inferno", "Teeth"],
-    correctAnswer: "Inferno",
-    explanation:
-      "While 'VANish', 'The Drain', and 'Teeth' received orchestral versions, 'Inferno' was only released in its original form.",
+      "Which of these artists is featured on the track 'Terms & Conditions' from 'Concrete Jungle [The OST]'?",
+    options: ["Bob Vylan", "Wargasm", "Iris.exe", "Thousand Below"],
+    correctAnswer: "Bob Vylan",
+    explanation: "'Terms & Conditions' features Bob Vylan, a British punk-rap duo.",
     funFact:
-      "The orchestral version of 'Teeth' is particularly praised for its cinematic atmosphere.",
-    source: "Provided discography",
+      "The track title and features blend social commentary with the album's heavy electronic sound.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
   // ==================== EXPERT / EXTREME (6) ====================
+
   {
     id: "band-x-1",
     category: "band",
     difficulty: "expert",
     question:
-      "The track 'C:\n\e off' from the Concrete Jungle OST uses a naming convention that directly references which area of computing?",
+      "The track `C:\\Projects\\CJOST\\BEATDEATH` from the Concrete Jungle OST uses a naming convention that directly references which area of computing?",
     options: [
       "Directory paths (file paths)",
       "SQL commands",
@@ -347,42 +361,41 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     ],
     correctAnswer: "Directory paths (file paths)",
     explanation:
-      "The use of backslashes and the 'C:\' structure is a clear reference to Windows file system directory paths.",
+      "The use of backslashes and the 'C:\\' structure is a clear reference to Windows file system directory paths.",
     funFact: "This cyberpunk aesthetic was intentional to match the dystopian theme of the album.",
-    source: "Provided discography / Conceptual analysis",
+    source: "Wikipedia - Concrete Jungle [The OST] / Conceptual analysis",
   },
+
   {
     id: "band-x-2",
     category: "band",
     difficulty: "expert",
     question:
-      "Besides Noah Sebastian and Poppy, which artists are credited as collaborators on the track 'VANish' from the Concrete Jungle OST?",
-    options: [
-      "Liu and Software Gothic",
-      "HEALTH and SWARM",
-      "ERRA and Kenny Hoopla",
-      "Kayzo and Zakk Cervini",
-    ],
+      "Which of these artists is NOT featured as a collaborator on 'Concrete Jungle [The OST]' according to the official tracklist?",
+    options: ["Poppy", "Health and Swarm", "Erra", "Liu and Software Gothic"],
     correctAnswer: "Liu and Software Gothic",
     explanation:
-      "'VANish' features Liu and Software Gothic, acting as an expanded, more experimental offshoot of the 'V.A.N' collaboration.",
-    funFact: "This track serves as a darker, weirder sequel to the original 'V.A.N' single.",
-    source: "Provided discography",
+      "The official tracklist features Poppy ('V.A.N'), Health and Swarm ('The Drain'), and Erra ('Anything > Human'). Liu and Software Gothic are not credited on any track.",
+    funFact:
+      "The album features a wide range of collaborators across its 26 tracks, blending metalcore with electronic and industrial elements.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
+
   {
     id: "band-x-3",
     category: "band",
     difficulty: "expert",
     question:
-      "Which track from the 'Finding God Before God Finds Me' era was the only one to receive an official remix simply titled '(Remix)' on the Concrete Jungle project?",
-    options: ["Dethrone", "Mercy", "The Hell I Overcame", "Burning Out"],
-    correctAnswer: "The Hell I Overcame",
+      "What is the total number of tracks on the 'Concrete Jungle [The OST]' album according to its official tracklist?",
+    options: ["18", "22", "26", "30"],
+    correctAnswer: "26",
     explanation:
-      "'The Hell I Overcame (Remix)' is the only track from the older catalog to receive a remix on the OST project.",
+      "According to the official tracklist, 'Concrete Jungle [The OST]' contains 26 tracks.",
     funFact:
-      "The remix transforms the originally heavy track into something far more electronic and industrial.",
-    source: "Provided discography",
+      "This makes it the band's longest release by far, packed with collaborations and reworks.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
+
   {
     id: "band-x-4",
     category: "band",
@@ -401,19 +414,22 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     funFact: "This statement was a direct response to obsessive fan behavior on social media.",
     source: "Revolver Magazine",
   },
+
   {
     id: "band-x-5",
     category: "band",
     difficulty: "expert",
     question:
-      "The title 'Concrete Jungle (The Sound of the End)' on the OST is a direct reference to which track from the debut album?",
-    options: ["Reprise (The Sound of the End)", "The Fountain", "The Letdown", "Exit Wounds"],
-    correctAnswer: "Reprise (The Sound of the End)",
+      "The track 'Hedonist [Recharged]' on 'Concrete Jungle [The OST]' features a collaboration with which artist?",
+    options: ["Wargasm", "Erra", "Bob Vylan", "Health"],
+    correctAnswer: "Wargasm",
     explanation:
-      "The subtitle '(The Sound of the End)' connects the new version of 'Concrete Jungle' to the 'Reprise' from the debut, creating a narrative cycle.",
-    funFact: "This connection shows how the band loves to weave their lore across multiple albums.",
-    source: "Provided discography",
+      "'Hedonist [Recharged]' reworks the original 'Hedonist' from the debut album and features Wargasm.",
+    funFact:
+      "This track bridges the band's early sound with their modern industrial metalcore evolution.",
+    source: "Wikipedia - Concrete Jungle [The OST]",
   },
+
   {
     id: "band-x-6",
     category: "band",
