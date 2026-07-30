@@ -60,11 +60,6 @@ export const Route = createFileRoute("/credits")({
           as I had building it. 🖤
         </p>
 
-        <p className="text-zinc-500 text-sm leading-relaxed">
-          If you are a rights holder and have any concerns regarding content appearing on this
-          website, please get in touch so it can be reviewed and, when appropriate, removed.
-        </p>
-
         <p className="text-zinc-400 leading-relaxed">
           Questions, found a bug, have some feedback, or just want to chat? Feel free to reach out!
           You can contact me at{" "}
