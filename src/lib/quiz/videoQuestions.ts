@@ -14,8 +14,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Anything > Human",
     explanation:
       "This atmospheric visual matches the orchestral, haunting vibe of 'Anything > Human', featured on the Concrete Jungle OST.",
-    funFact:
-      "The orchestral version of this track was also released, giving it an even more cinematic feel.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "anything",
@@ -35,8 +33,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Artificial Suicide",
     explanation:
       "The industrial, glitch-heavy aesthetic is a perfect match for the high‑energy single 'Artificial Suicide'.",
-    funFact:
-      "The song's title and visuals explore themes of digital self‑destruction and identity crises.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "artificial",
@@ -56,8 +52,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Burning Out",
     explanation:
       "The fiery imagery and intense close‑ups are directly tied to the promotional material for 'Burning Out'.",
-    funFact:
-      "An acoustic version of 'Burning Out' appears on the FGBGFM Unplugged EP, showcasing a softer side.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "burning",
@@ -77,7 +71,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Careful What You Wish For",
     explanation:
       "The visual's dark, cautionary tone aligns perfectly with the lyrics and mood of 'Careful What You Wish For'.",
-    funFact: "This track got both an acoustic and a 'Vocalat' version, showing its versatility.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "careful",
@@ -97,8 +90,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Concrete Jungle",
     explanation:
       "The raw, urban warehouse setting is iconic for the title track of the band's third album.",
-    funFact:
-      "A reimagined version, 'Concrete Jungle (The Sound of the End)', appears on the Concrete Jungle OST.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "concrete",
@@ -118,8 +109,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Dethrone",
     explanation:
       "The aggressive, rebellious visual style is unmistakably linked to the hard‑hitting single 'Dethrone'.",
-    funFact:
-      "Dethrone is one of the band's heaviest tracks, and it's often a live setlist highlight.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "dethrone",
@@ -139,7 +128,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "The Death of Peace of Mind",
     explanation:
       "The glitchy, digital distortion reflects the title track's exploration of modern anxiety and information overload.",
-    funFact: "This song was the lead single from the album and set the tone for the entire record.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "digital",
@@ -159,8 +147,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "The Drain",
     explanation:
       "The collaborative visual with HEALTH and SWARM has a distinct industrial and dark atmosphere.",
-    funFact:
-      "An orchestral version of 'The Drain' was released on the Concrete Jungle OST, adding a symphonic layer.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "drain",
@@ -180,8 +166,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Exit Wounds",
     explanation:
       "The raw, emotional intensity of the imagery matches the debut album's standout track 'Exit Wounds'.",
-    funFact:
-      "This song was one of the first to gain traction for the band, thanks to its relatable lyrics.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "exit",
@@ -201,7 +185,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "The Fountain",
     explanation:
       "The symbolic, almost ethereal visual is associated with the closing track of the debut album.",
-    funFact: "The Fountain features some of the most poetic lyrics in the band's early catalogue.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "fountain",
@@ -221,7 +204,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Glass Houses",
     explanation:
       "The sharp, angular visual is a direct reference to the opener of the debut album.",
-    funFact: "The song's opening riff is one of the most recognizable in the band's discography.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "glass",
@@ -240,8 +222,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     options: ["The Hell I Overcame", "Dethrone", "Blood", "Mercy"],
     correctAnswer: "The Hell I Overcame",
     explanation: "The fiery, intense imagery aligns with the powerful chorus of this FGBGFM track.",
-    funFact:
-      "Both an acoustic and a remix version of this song exist, showing its enduring popularity.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "hell",
@@ -260,8 +240,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     options: ["Impose", "Specter", "Dying to Love", "Left for Good"],
     correctAnswer: "Impose",
     explanation: "The modern, sleek visual style is a perfect match for the 2025 single 'Impose'.",
-    funFact:
-      "Impose was released alongside 'Specter' and marked a new creative phase for the band.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "impose",
@@ -281,8 +259,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Just Pretend",
     explanation:
       "The melancholic, intimate visual is unmistakably from the promotional material for 'Just Pretend'.",
-    funFact:
-      "An unplugged version appears on the FGBGFM Unplugged EP, and a version with Kenny Hoopla was released later.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "just",
@@ -302,8 +278,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Left for Good",
     explanation:
       "The somber, reflective imagery matches the tone of the 2025 single 'Left for Good'.",
-    funFact:
-      "This track was released alongside 'Dying to Love' and 'Impose' as part of a string of new material.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "left",
@@ -323,8 +297,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Limits",
     explanation:
       "The stark, boundary‑pushing visual is directly tied to the deluxe edition track 'Limits', which explores themes of self‑imposed barriers.",
-    funFact:
-      "'Limits' was added as a bonus track on the deluxe version of 'Finding God Before God Finds Me' in 2020.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "limits",
@@ -344,8 +316,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "NERVOUS SYSTEM",
     explanation:
       "The glitchy, high‑tension visual is a perfect match for the collaborative electronic track 'NERVOUS SYSTEM', featuring iRis.EXE from the Concrete Jungle OST.",
-    funFact:
-      "This track is one of the most experimental collaborations on the OST, blending Bad Omens' heavy style with hyper‑pop and industrial elements from iRis.EXE.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "nervous",
@@ -364,8 +334,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     options: ["Specter", "Impose", "Dying to Love", "Left for Good"],
     correctAnswer: "Specter",
     explanation: "The dark, ghostly visual is directly tied to the 2025 single 'Specter'.",
-    funFact:
-      "Specter was released alongside 'Impose', and both tracks showcase a more electronic influence.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "specter",
@@ -385,8 +353,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "If I'm There",
     explanation:
       "The intimate, reflective visual is directly tied to the emotional ballad 'If I'm There' from the album 'Finding God Before God Finds Me'.",
-    funFact:
-      "'If I'm There' is one of the band's most stripped‑back and vulnerable tracks, often praised for its raw vocal delivery.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "there",
@@ -406,8 +372,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "Like a Villain",
     explanation:
       "The dark, theatrical visual is a perfect match for the brooding single 'Like a Villain'.",
-    funFact:
-      "The song's chorus is one of the catchiest on the album, often getting crowds singing along.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "villain",
@@ -427,8 +391,6 @@ export const VIDEO_QUESTIONS: Question[] = [
     correctAnswer: "The Worst in Me",
     explanation:
       "The raw, vulnerable visual captures the self‑reflective tone of this deep cut from the debut album.",
-    funFact:
-      "The song explores themes of self‑sabotage and inner darkness, a recurring topic in the band's lyrics.",
     source: "Sumerian Records",
     mediaType: "image",
     mediaAssetId: "worst",

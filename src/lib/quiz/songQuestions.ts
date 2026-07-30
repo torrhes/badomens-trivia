@@ -17,8 +17,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "ARTIFICIAL SUICIDE",
     explanation:
       "The heavy, industrial riff and aggressive delivery are unmistakably from 'ARTIFICIAL SUICIDE'.",
-    funFact:
-      "This track was released as a single and features some of the band's most frantic drum work.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "artificial",
@@ -38,7 +36,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Broken Youth",
     explanation:
       "The melancholic yet heavy opening is a signature of 'Broken Youth' from the debut album.",
-    funFact: "This song deals with themes of lost innocence and the scars of growing up too fast.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "broken",
@@ -63,8 +60,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Burning Out",
     explanation:
       "The soaring chorus and emotional build are classic 'Burning Out' – one of the band's most anthemic tracks.",
-    funFact:
-      "An acoustic version of this song appears on the FGBGFM Unplugged EP, showcasing Noah's vocal range.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "burning",
@@ -84,8 +79,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Careful What You Wish For",
     explanation:
       "The brooding, atmospheric intro is a dead giveaway for 'Careful What You Wish For'.",
-    funFact:
-      "This track has multiple versions, including acoustic and 'Vocalat' – a stripped vocal-focused mix.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "careful",
@@ -104,7 +97,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Dethrone", "Blood", "Mercy", "The Hell I Overcame"],
     correctAnswer: "Dethrone",
     explanation: "The aggressive, chugging guitar and defiant vocals are unmistakably 'Dethrone'.",
-    funFact: "'Dethrone' is a fan-favorite live track, often closing the set with maximum energy.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "dethrone",
@@ -124,8 +116,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "DIGITAL FOOTPRINT",
     explanation:
       "The glitchy, electronic-infused sound is unique to the visual release 'DIGITAL FOOTPRINT'.",
-    funFact:
-      "This visual piece was released alongside the Concrete Jungle OST and features a more experimental production style.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "digital",
@@ -144,8 +134,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Dying To Love", "Just Pretend", "Bad Decisions", "Somebody Else"],
     correctAnswer: "Dying To Love",
     explanation: "The vulnerable, piano-driven intro is characteristic of 'Dying To Love'.",
-    funFact:
-      "An unplugged version of this track appears on the FGBGFM Unplugged EP, highlighting its emotional core.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "dying",
@@ -165,8 +153,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "EVEN",
     explanation:
       "The dark, hypnotic atmosphere is a signature of 'EVEN', a deep cut from the Concrete Jungle OST.",
-    funFact:
-      "'EVEN' was released as a visual single and features a moody, trip-hop influenced production.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "even",
@@ -185,8 +171,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Exit Wounds", "Glass Houses", "The Worst in Me", "Broken Youth"],
     correctAnswer: "Exit Wounds",
     explanation: "The raw, emotional opening is instantly recognizable as 'Exit Wounds'.",
-    funFact:
-      "This song was one of the first to gain traction on streaming platforms, helping launch the band's career.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "exit",
@@ -205,7 +189,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["F E R A L", "Malice", "Hedonist", "Crawl"],
     correctAnswer: "F E R A L",
     explanation: "The chaotic, aggressive riff and shouted vocals are pure 'F E R A L' energy.",
-    funFact: "The title is stylized with spaces, adding to the track's raw and unhinged feel.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "feral",
@@ -225,8 +208,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "The Fountain",
     explanation:
       "The melodic, almost ethereal guitar line is the hallmark of the closing track 'The Fountain'.",
-    funFact:
-      "This song is one of the band's most lyrically poetic, exploring themes of rebirth and hope.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "fountain",
@@ -245,8 +226,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Glass Houses", "Exit Wounds", "The Worst in Me", "Broken Youth"],
     correctAnswer: "Glass Houses",
     explanation: "The iconic opening riff is instantly recognizable as the debut album's opener.",
-    funFact:
-      "The song's title is a reference to the proverb about throwing stones – a theme of hypocrisy and retaliation.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "glass",
@@ -265,8 +244,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["The Grey", "IDWT$", "Somebody Else", "Who Are You?"],
     correctAnswer: "The Grey",
     explanation: "The moody, atmospheric verses and explosive chorus are signature 'The Grey'.",
-    funFact:
-      "This track is a fan-favorite deep cut from The Death of Peace of Mind, praised for its dynamic shifts.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "grey",
@@ -286,7 +263,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "The Hell I Overcame",
     explanation:
       "The powerful, anthemic chorus and heavy breakdown are unmistakably from this FGBGFM standout.",
-    funFact: "The song has both an acoustic and a remix version, showcasing its versatility.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "hell",
@@ -306,8 +282,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "IDWT$",
     explanation:
       "The electronic-infused, industrial sound is unique to 'IDWT$' (I Don't Wanna Talk).",
-    funFact:
-      "The title is an abbreviation, and the song explores themes of emotional exhaustion and isolation.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "idwt",
@@ -327,8 +301,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Impose",
     explanation:
       "The modern, synth-heavy production and tight groove are classic 'Impose' from the 2025 singles.",
-    funFact:
-      "'Impose' was released alongside 'Specter' and 'Dying To Love' as part of a new creative chapter for the band.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "impose",
@@ -348,8 +320,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Left For Good",
     explanation:
       "The melancholic, reflective melody is a perfect match for the 2025 single 'Left For Good'.",
-    funFact:
-      "The song deals with themes of abandonment and moving on, with a surprisingly catchy hook.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "left",
@@ -369,8 +339,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "LOADING SCREEN",
     explanation:
       "The ambient, cinematic soundscape is unmistakably from the original soundtrack piece 'LOADING SCREEN'.",
-    funFact:
-      "This instrumental track was released as part of the Concrete Jungle OST and showcases the band's atmospheric side.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "loading",
@@ -389,8 +357,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Mercy", "Said and Done", "Blood", "Running in Circles"],
     correctAnswer: "Mercy",
     explanation: "The slow-burning, emotionally charged intro is classic 'Mercy' from FGBGFM.",
-    funFact:
-      "This track is one of the band's most underrated songs, featuring a haunting bridge and powerful climax.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "mercy",
@@ -410,8 +376,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Nowhere To Go",
     explanation:
       "The driving, urgent riff and soaring chorus are a dead giveaway for 'Nowhere To Go'.",
-    funFact:
-      "This track was released as a single and features one of the band's most anthemic sing-along sections.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "nowhere",
@@ -431,8 +395,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Just Pretend",
     explanation:
       "The intimate, stripped-back intro and emotive vocals are unmistakably 'Just Pretend'.",
-    funFact:
-      "An unplugged version appears on the FGBGFM Unplugged EP, and a version with Kenny Hoopla was released later.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "pretend",
@@ -451,8 +413,6 @@ export const SONG_QUESTIONS: Question[] = [
     options: ["Said & Done", "Mercy", "Blood", "Kingdom of Cards"],
     correctAnswer: "Said & Done",
     explanation: "The punchy, aggressive riff and defiant lyrics are pure 'Said & Done' energy.",
-    funFact:
-      "This track from FGBGFM is often overlooked but features some of the band's tightest riff work.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "said",
@@ -472,8 +432,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Specter",
     explanation:
       "The dark, electronic-tinged atmosphere is the hallmark of the 2025 single 'Specter'.",
-    funFact:
-      "This track features a hypnotic, almost ghostly vocal delivery that matches its title.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "specter",
@@ -493,8 +451,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "Like A Villain",
     explanation:
       "The theatrical, brooding intro and catchy chorus are unmistakably 'Like A Villain'.",
-    funFact:
-      "This song was a promotional single and became a fan-favorite due to its infectious hook.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "villain",
@@ -514,8 +470,6 @@ export const SONG_QUESTIONS: Question[] = [
     correctAnswer: "The Worst In Me",
     explanation:
       "The raw, vulnerable opening and introspective lyrics are signature 'The Worst In Me'.",
-    funFact:
-      "This deep cut from the debut album explores themes of self-sabotage and inner demons.",
     source: "Sumerian Records",
     mediaType: "audio",
     mediaAssetId: "worst",

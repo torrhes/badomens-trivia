@@ -10,7 +10,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     options: ["Los Angeles, CA", "Richmond, VA", "Nashville, TN", "New York, NY"],
     correctAnswer: "Richmond, VA",
     explanation: "Despite gaining national prominence, the band was formed in Richmond, Virginia.",
-    funFact: "Noah Sebastian moved to Richmond specifically to pursue his music career.",
     source: "KRRO / The Metalverse",
   },
   {
@@ -23,7 +22,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Nick Folio",
     explanation:
       "Nick Folio impressed the band with his online cover and was officially invited to join.",
-    funFact: "Before that, he was already a fan of the sound they were creating.",
     source: "KRRO",
   },
   {
@@ -35,7 +33,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Vincent Riquier",
     explanation:
       "Bassist Vincent Riquier had to leave because the injury prevented him from touring.",
-    funFact: "He was replaced by Nick Ruffilo, who later became a permanent fixture.",
     source: "KRRO",
   },
   {
@@ -47,8 +44,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Suffocate",
     explanation:
       "'Suffocate' is a collaboration between Bad Omens and Kayzo, released as a standalone single.",
-    funFact:
-      "The track showcases the band's versatility, blending metalcore with heavy electronic elements.",
     source: "Provided discography",
   },
   {
@@ -66,8 +61,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Original Soundtrack",
     explanation:
       "The project was conceived as an Original Soundtrack that expands the universe of the album.",
-    funFact:
-      "It includes orchestral versions and remixes, functioning as a conceptual 'film score'.",
     source: "Provided discography",
   },
   {
@@ -80,8 +73,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "ERRA",
     explanation:
       "'Anything > Human' is a direct collaboration with ERRA, released as part of the Concrete Jungle project.",
-    funFact:
-      "The fusion of Noah's vocals with ERRA's technical instrumentation created one of the most complex tracks on the record.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
@@ -94,8 +85,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Poppy",
     explanation:
       "Bad Omens and Poppy joined forces on 'V.A.N', released as a single and later part of the Concrete Jungle OST.",
-    funFact:
-      "The track features a dark, industrial aesthetic that perfectly matched both artists' styles.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
@@ -106,9 +95,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
       "Which major Bad Omens hit was originally written by Noah Sebastian as a sarcastic 'butt-rock' joke?",
     options: ["Like A Villain", "Just Pretend", "The Death of Peace of Mind", "Artificial Suicide"],
     correctAnswer: "Just Pretend",
-    explanation:
-      "Noah revealed to NME that the track started as a satire of radio rock but unexpectedly became one of their biggest hits.",
-    funFact: "The irony became reality when the song exploded on TikTok and rock radio.",
     source: "NME",
   },
 
@@ -123,8 +109,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "The Death of Peace of Mind",
     explanation:
       "Noah challenged himself to produce without traditional instruments, using household objects. The vacuum sample became the foundation of the title track.",
-    funFact:
-      "Standard instruments eventually replaced the samples, but the demo's experimental spirit remains in the song's DNA.",
     source: "The Metalverse",
   },
   {
@@ -135,8 +119,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     options: ["Fearless Records", "Sumerian Records", "Nuclear Blast", "Roadrunner Records"],
     correctAnswer: "Sumerian Records",
     explanation: "They signed with Sumerian Records in 2015, which released their debut in 2016.",
-    funFact:
-      "Sumerian also released their first two albums before they moved on to other projects.",
     source: "Wikipedia - Bad Omens (album)",
   },
   {
@@ -149,8 +131,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Dust in the Wind",
     explanation:
       "In 2024, the band released a dark, atmospheric version of 'Dust in the Wind' for the film.",
-    funFact:
-      "The cover retains the original's melancholy while adding Bad Omens' signature density.",
     source: "Provided discography",
   },
   {
@@ -162,7 +142,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "HEALTH",
     explanation:
       "'The Drain' features HEALTH, known for their industrial textures, alongside SWARM.",
-    funFact: "This track is one of the most experimental cuts on the Concrete Jungle project.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
   {
@@ -180,7 +159,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: '"Love\'s the death of peace of mind"',
     explanation:
       "The line 'Love's the death of peace of mind' opens the track and names the album, encapsulating its central theme.",
-    funFact: "The phrase was inspired by Noah's reflections on toxic relationships.",
     source: "Creative Loafing",
   },
   {
@@ -193,8 +171,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "2013",
     explanation:
       "While playing guitar in another band (Immortalize), Noah started writing lyrics on his own in 2013.",
-    funFact:
-      "He kept these lyrics hidden until he felt he had enough material to form his own band.",
     source: "KRRO",
   },
   {
@@ -207,8 +183,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Will Putney",
     explanation:
       "Will Putney (known for Body Count and The Amity Affliction) produced the debut in Belleville, NJ.",
-    funFact:
-      "Choosing Putney gave the album a sonic weight that defined the band's early identity.",
     source: "Wikipedia - Bad Omens (album)",
   },
   {
@@ -220,7 +194,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "New Jersey",
     explanation:
       "Graphic Nature Audio, Will Putney's studio, is located in Belleville, New Jersey.",
-    funFact: "The band temporarily moved to NJ to fully focus on the recording process.",
     source: "KRRO",
   },
 
@@ -236,8 +209,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Hedonist [Recharged]",
     explanation:
       "The debut album features the track 'Hedonist'. The OST reworks it as 'Hedonist [Recharged]' featuring Wargasm.",
-    funFact:
-      "This is the only track on the OST that directly reworks a song from the band's first album.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -256,8 +227,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "C:\\Projects\\CJOST\\BEATDEATH",
     explanation:
       "The opening track is stylized as a computer file path, fitting the album's cyberpunk theme.",
-    funFact:
-      "The track is named after the project folder for the album itself, blending the band's reality with the album's digital aesthetic.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -270,8 +239,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Winds of Plague",
     explanation:
       "Noah collaborated with Winds of Plague on their album 'Blood of My Enemy' in 2017.",
-    funFact:
-      "This collaboration showcased Noah's versatility in delivering heavy deathcore vocals.",
     source: "KRRO",
   },
 
@@ -285,8 +252,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "IDWT$",
     explanation:
       "The track 'IDWT$' is stylized with a dollar sign, and its meaning is generally interpreted as 'I Don't Want The Money'.",
-    funFact:
-      "The unconventional title adds to the album's themes of frustration and emotional exhaustion.",
     source: "Wikipedia - The Death of Peace of Mind",
   },
 
@@ -299,8 +264,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "8.5",
     explanation:
       "The debut received an 8.5/10 rating from Metal Injection, highlighting its impact on the metalcore scene.",
-    funFact:
-      "The review praised its sonic maturity, despite inevitable comparisons to Bring Me the Horizon.",
     source: "KRRO",
   },
   {
@@ -313,7 +276,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Bring Me the Horizon",
     explanation:
       "Many critics pointed out similarities to BMTH's 'Sempiternal', which led to unfair comparisons.",
-    funFact: "Over time, the band managed to shed these comparisons and forge their own identity.",
     source: "KRRO",
   },
   {
@@ -326,8 +288,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Come Undone",
     explanation:
       "The 2020 Deluxe edition added three bonus tracks: 'Never Know', 'Limits', and a cover of Duran Duran's 1993 hit 'Come Undone'.",
-    funFact:
-      "This cover marked Bad Omens' first official foray into reimagining mainstream pop/rock classics.",
     source: "Wikipedia - Finding God Before God Finds Me",
   },
 
@@ -340,8 +300,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     options: ["Bob Vylan", "Wargasm", "Iris.exe", "Thousand Below"],
     correctAnswer: "Bob Vylan",
     explanation: "'Terms & Conditions' features Bob Vylan, a British punk-rap duo.",
-    funFact:
-      "The track title and features blend social commentary with the album's heavy electronic sound.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -362,7 +320,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Directory paths (file paths)",
     explanation:
       "The use of backslashes and the 'C:\\' structure is a clear reference to Windows file system directory paths.",
-    funFact: "This cyberpunk aesthetic was intentional to match the dystopian theme of the album.",
     source: "Wikipedia - Concrete Jungle [The OST] / Conceptual analysis",
   },
 
@@ -376,8 +333,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Liu and Software Gothic",
     explanation:
       "The official tracklist features Poppy ('V.A.N'), Health and Swarm ('The Drain'), and Erra ('Anything > Human'). Liu and Software Gothic are not credited on any track.",
-    funFact:
-      "The album features a wide range of collaborators across its 26 tracks, blending metalcore with electronic and industrial elements.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -391,8 +346,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "26",
     explanation:
       "According to the official tracklist, 'Concrete Jungle [The OST]' contains 26 tracks.",
-    funFact:
-      "This makes it the band's longest release by far, packed with collaborations and reworks.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -411,7 +364,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: '"Don\'t make Bad Omens your life"',
     explanation:
       "Noah spoke about the dark side of fame and asked fans not to make the band the absolute center of their lives.",
-    funFact: "This statement was a direct response to obsessive fan behavior on social media.",
     source: "Revolver Magazine",
   },
 
@@ -425,8 +377,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     correctAnswer: "Wargasm",
     explanation:
       "'Hedonist [Recharged]' reworks the original 'Hedonist' from the debut album and features Wargasm.",
-    funFact:
-      "This track bridges the band's early sound with their modern industrial metalcore evolution.",
     source: "Wikipedia - Concrete Jungle [The OST]",
   },
 
@@ -444,8 +394,6 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     ],
     correctAnswer: "The Death of Peace of Mind (2022)",
     explanation: "The third studio album debuted at #1 on Billboard's Top Hard Rock Albums chart.",
-    funFact:
-      "This achievement solidified the band as one of the leading forces in modern rock during the 2020s.",
     source: "Billboard",
   },
 ];
