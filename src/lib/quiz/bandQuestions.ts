@@ -18,7 +18,7 @@ export const BAND_FACT_QUESTIONS: Question[] = [
     category: "band",
     difficulty: "easy",
     question:
-      "Which current member joined Bad Omens after sending an online drum cover of the band's early demos?",
+      "Which current member joined Bad Omens after sending an online cover of the band's early demos?",
     options: ["Nick Folio", "Nick Ruffilo", "Joakim Karlsson", "Vincent Riquier"],
     correctAnswer: "Nick Folio",
     explanation:
