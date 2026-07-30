@@ -21,7 +21,7 @@ export const RANKS: Rank[] = [
     label: "BAD DECISIONS",
     minPct: 21,
     maxPct: 40,
-    headline: "A LOT OF HENNESSY?YOU LOST THE PLOT",
+    headline: "A LOT OF HENNESSY? YOU LOST THE PLOT",
     topPercent: 65,
   },
   {
@@ -34,7 +34,7 @@ export const RANKS: Rank[] = [
   },
   {
     key: "concrete",
-    label: "CONCRETE JUNGLE",
+    label: "YOU ASCENDED CONCRETE JUNGLE",
     minPct: 61,
     maxPct: 80,
     headline: "YOU CLIMBED TO THE SUN",
@@ -53,7 +53,7 @@ export const RANKS: Rank[] = [
     label: "FINDING GOD",
     minPct: 96,
     maxPct: 100,
-    headline: "YOU FOUND GOD BEFORE HE FOUNDS YOU",
+    headline: "YOU FOUND GOD BEFORE GOD FOUND YOU",
     topPercent: 2,
   },
 ];
