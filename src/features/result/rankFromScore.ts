@@ -45,7 +45,7 @@ export const RANKS: Rank[] = [
     label: "DETHRONE",
     minPct: 81,
     maxPct: 95,
-    headline: "YOU HAVE REACHED THE PERALY GATES",
+    headline: "YOU HAVE REACHED THE PEARLY GATES",
     topPercent: 8,
   },
   {
